@@ -1,7 +1,7 @@
 # how-to-react
 
 Overview of new concepts when working with
-Facebook's React w/ some helpful resources.
+Facebook's [React](http://facebook.github.io/react/) w/ some helpful resources.
 
 ## Why this doc?
 

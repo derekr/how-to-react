@@ -115,7 +115,7 @@ since it requires a transpiling step, Babel, and reading code that can
 look significantly different than the JavaScript you're used to. A lot of
 tooling in the React ecosystem is opting to using es6 which means their
 documentation is written in es6, the code is written in es6 and it's up to
-you to get these tools working in your project. This can make researching 
+you to get these tools working in your project. This can make researching
 React tooling pretty difficult since you can't as easily evalute someone's
 solution as you could if it were all written/documented in es5.
 
@@ -135,6 +135,63 @@ This is a good overview of [Navigating the React Ecosystem](http://www.toptal.co
 ## CommonJS and Bundling
 
 ## Flux and State Management
+
+You may have heard of Flux. It's a very simple idea that has been around
+for a while, but only recently got some branding love from Facebook. You also
+may have come across one of the many ∞ implementations:
+
+https://github.com/voronianski/flux-comparison
+
+The problem something like Flux solves is
+unidirectional data flow and state management.
+
+You probably don't need a Flux library to do that.
+
+It's as simple as having an object literal at the top of your
+webapp:
+
+```js
+var appState = {
+  user: {
+    name: 'drk',
+    avatar: '/path/avatar.png'
+  }
+}
+
+renderApp(appState)
+```
+
+This will ultimately render some `<img>` element w/ the `avatar` path.
+
+You'll want a way of communicating intents of changing that state from the
+user. For example let's say the user wants to change their avatar path, you'll
+need to handle a form submission w/ the new avatar path. In JSX that might look
+like:
+
+```js
+function updateAvatar () {
+  appState.user.name = React.findDOMNode(this.refs.avatar).value.trim()
+  renderApp(appState)
+}
+
+<form onSubmit={ updateAvatar }>
+  <input name='avatar' type='text' />
+</form>
+```
+
+Admittedly a really naive example. This [article](http://hackflow.com/blog/2015/03/08/boiling-react-down-to-few-lines-in-jquery/) does a great job of walking through a unidirectional data flow
+using jQuery which might help make this concept more concrete.
+
+Depending on the size/needs of your project state management isn't a huge
+concern. Once your applications become complex enough you'll want to invest
+in something to make reasoning with the global state of your webapp
+more reasonable.
+
+There are many benefits to using a Flux implementation, but consider
+what you're building before making a decision. There are also some
+exciting new concepts on data dependency/flow from Facebook that might
+augment or replace the needs for a complex Flux setup. Check out
+[Relay and GraphQL](http://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html). 
 
 ## Data Fetching (Ajax)
 

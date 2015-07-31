@@ -60,3 +60,43 @@ a light at the end of the tunnel!
 The example above is available on CodePen (a Frontend code playground):
 
 http://codepen.io/drk/pen/pJqbVO
+
+What's happening here is the source JavaScript is being transpiled or
+compiled using a tool called [Babel](https://babeljs.io).
+This tool can read special and non stanard syntax and spit out plain JavaScript.
+
+```
+button.jsx -> Babel -> button.js
+```
+
+`button.js` is what you'd want to include in your page:
+
+```html
+<script src='button.js'></script>
+```
+
+For instance here is what the example above looks like after transpiling through
+Babel:
+
+```js
+'use strict';
+
+function buttonClicked() {
+  alert('The button has been clicked!');
+}
+
+var btn = React.createElement(
+  'button',
+  { onClick: buttonClicked },
+  'I\'m a button!'
+);
+```
+
+Note how it injects certain things you don't necessarily care about like
+calling `React.createElement` as a simple function.
+
+While this tool does enable us to write custom JavaScript it unfortunately
+does add an extra layer of abstraction when working on a webapp making
+things considerably more complex. I can tell you the learning curve is worth
+it however as it unlocks JSX, es6 (the next version of JavaScript syntax)
+and other neat transformations.

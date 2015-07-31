@@ -38,13 +38,13 @@ Others have done a way better job than I can at explaining
 what JSX is and I encourage you to read through some of
 their write ups, but here is a simple example:
 
-```
+```js
 function buttonClicked () {
-  console.log('The button has been clicked!')
+  alert('The button has been clicked!')
 }
 
 var (
-    <botton onClick={ buttonClicked }>I'm a button!</button>
+    <button onClick={ buttonClicked }>I'm a button!</button>
 )
 ```
 
@@ -56,3 +56,7 @@ source down in to standard JavaScript that browsers can actually run.
 
 This is where things get quite complicated, but there is
 a light at the end of the tunnel!
+
+The example above is available on CodePen (a Frontend code playground):
+
+http://codepen.io/drk/pen/pJqbVO

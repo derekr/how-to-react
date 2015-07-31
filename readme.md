@@ -101,6 +101,33 @@ things considerably more complex. I can tell you the learning curve is worth
 it however as it unlocks JSX, es6 (the next version of JavaScript syntax)
 and other neat transformations.
 
+#### es6
+
+I don't think it's necessary to do a deep dive in to es6 here, but a quick
+context lesson will me helpful.
+
+Do you need to know es6 to use React? Absolutely not.
+
+Should you use es6 when writing React apps? Probably not, but it's fun.
+
+The biggest issue with es6 rigth now is it's a pretty large concept to learn
+since it requires a transpiling step, Babel, and reading code that can
+look significantly different than the JavaScript you're used to. A lot of
+tooling in the React ecosystem is opting to using es6 which means their
+documentation is written in es6, the code is written in es6 and it's up to
+you to get these tools working in your project. This can make researching 
+React tooling pretty difficult since you can't as easily evalute someone's
+solution as you could if it were all written/documented in es5.
+
+So if you're deciding to use React you're essentially deciding to adopt es6
+as well.
+
+That said it isn't too difficult to learn the new syntax it just takes some
+time. It's something to consider if you're introducing React in to a team
+environment where time is truly expensive.
+
+This is a good overview of [Navigating the React Ecosystem](http://www.toptal.com/react/navigating-the-react-ecosystem)
+
 ### Universal Rendering
 
 @TODO
